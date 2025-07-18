@@ -3,8 +3,7 @@ import Foundation
 
 struct UserSettings: Codable {
     var notificationsEnabled: Bool
-: Codable {
-    var notificationsEnabled: Bool
+
     var darkModeEnabled: Bool
     var biometricAuthEnabled: Bool
     var privacySettings: PrivacySettings
@@ -29,6 +28,7 @@ struct PrivacySettings: Codable {
 
 // MARK: - Authentication State
 enum AuthState {
+    case onboarding
     case authenticated
     case unauthenticated
     case inProgress

@@ -5,7 +5,7 @@ class SettingsManager: ObservableObject {
     @Published var userSettings: UserSettings
 
     init() {
-        self.userSettings = UserSettings(notificationsEnabled: false)
+        self.userSettings = UserSettings()
         loadSettings()
     }
 

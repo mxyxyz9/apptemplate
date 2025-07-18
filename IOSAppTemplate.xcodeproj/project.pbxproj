@@ -32,6 +32,10 @@
 		2E3E7D7E2C4A0E4A007A4E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E3E7D812C4A0E4A007A4E1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E3E7D842C4A0E4A007A4E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E3E7D902C4A0E4A007A4E1E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem/ThemeManager.swift"; sourceTree = "<group>"; };
+		2E3E7D912C4A0E4A007A4E1E /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components/PrimaryButtonStyle.swift"; sourceTree = "<group>"; };
+		2E3E7D902C4A0E4A007A4E1E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem/ThemeManager.swift"; sourceTree = "<group>"; };
+		2E3E7D912C4A0E4A007A4E1E /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components/PrimaryButtonStyle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */

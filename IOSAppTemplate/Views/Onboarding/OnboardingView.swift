@@ -32,7 +32,7 @@ struct OnboardingView: View {
 }
 
 struct OnboardingPageView: View {
-    @EnvironmentObject var theme: ThemeManager
+    @EnvironmentObject var theme: AppTheme
     var imageName: String
     var title: String
     var description: String
@@ -56,7 +56,7 @@ struct OnboardingPageView: View {
                 Button("Get Started") {
                     onComplete?()
                 }
-                .buttonStyle(PrimaryButtonStyle())
+                .buttonStyle(GlassmorphicButtonStyle())
                 .padding(.top)
             }
         }

@@ -1,11 +1,16 @@
 
 import SwiftUI
+import DesignSystem
+import Components
+import Views.Onboarding
+import Views.Auth
+import Views.Main
 
 struct AppCoordinator: View {
     @StateObject private var authManager = AuthManager()
     @StateObject private var userManager = UserManager()
     @StateObject private var settingsManager = SettingsManager()
-    @StateObject private var themeManager = ThemeManager()
+    @EnvironmentObject var theme: AppTheme
 
     var body: some View {
         Group {
@@ -21,6 +26,6 @@ struct AppCoordinator: View {
         .environmentObject(authManager)
         .environmentObject(userManager)
         .environmentObject(settingsManager)
-        .environmentObject(themeManager)
+        .environmentObject(theme)
     }
 }

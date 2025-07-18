@@ -1,8 +1,6 @@
 import Foundation
 
 struct User: Codable, Identifiable {
-    let id: UUID
-    let email: String
     let id: String
     var email: String
     var username: String
