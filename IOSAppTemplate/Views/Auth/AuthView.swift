@@ -1,20 +1,20 @@
-
 import SwiftUI
 
-struct AuthView: View {
-    @EnvironmentObject var theme: ThemeManager
-
+struct AuthenticationView: View {
+    @State private var showSignUp = false
+    
     var body: some View {
-        TabView {
-            SignInView()
-                .tabItem {
-                    Label("Sign In", systemImage: "person.fill")
-                }
-            SignUpView()
-                .tabItem {
-                    Label("Sign Up", systemImage: "person.badge.plus")
-                }
+        NavigationView {
+            if showSignUp {
+                SignUpView(showSignUp: $showSignUp)
+            } else {
+                SignInView(showSignUp: $showSignUp)
+            }
         }
-        .accentColor(theme.colors.accent)
     }
+}
+
+#Preview {
+    AuthenticationView()
+        .environmentObject(AppCoordinator())
 }

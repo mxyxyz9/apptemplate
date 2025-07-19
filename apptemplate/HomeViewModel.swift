@@ -2,30 +2,30 @@ import SwiftUI
 import Combine
 
 // MARK: - Models
-struct FeaturedItem: Identifiable {
-    let id = UUID()
+public struct FeaturedItem: Identifiable {
+    public let id = UUID()
     let title: String
     let subtitle: String
     public let image: String
     public let color: Color
 }
 
-public public struct QuickAction: Identifiable {
-    let id = UUID()
+public struct QuickAction: Identifiable {
+    public let id = UUID()
     let title: String
     public let icon: String
     public let action: () -> Void
 }
 
-public struct ContentItem: Identifiable {
-    let id = UUID()
+public struct ContentItem: Identifiable, Equatable {
+    public let id = UUID()
     let title: String
     public let value: String
     public let icon: String
 }
 
 public struct ContentSection: Identifiable, Equatable {
-    let id = UUID()
+    public let id = UUID()
     let title: String
     public let items: [ContentItem]
 }

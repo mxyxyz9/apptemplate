@@ -42,15 +42,7 @@ struct PillButtonStyle: ButtonStyle {
     }
 }
 
-struct SectionHeader: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(AppTheme.Typography.headline.weight(.bold))
-            .foregroundColor(.primary)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, AppTheme.Spacing.elementSpacing)
-    }
-}
+
 
 // Card styles for different purposes
 struct CardStyle: ViewModifier {

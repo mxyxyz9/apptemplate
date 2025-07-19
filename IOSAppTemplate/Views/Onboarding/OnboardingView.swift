@@ -1,65 +1,131 @@
-
 import SwiftUI
 
 struct OnboardingView: View {
-    @EnvironmentObject var authManager: AuthManager
-
+    @EnvironmentObject private var appCoordinator: AppCoordinator
+    @State private var currentPage = 0
+    private let totalPages = 3
+    
     var body: some View {
-        TabView {
-            OnboardingPageView(
-                imageName: "figure.wave",
-                title: "Welcome to the App",
-                description: "This is a template app to get you started with your new project."
-            )
-            OnboardingPageView(
-                imageName: "hand.draw",
-                title: "Modern Design",
-                description: "A clean and minimalistic design system to build upon."
-            )
-            OnboardingPageView(
-                imageName: "gearshape",
-                title: "Ready to Go",
-                description: "Start building your app with all the basics already set up.",
-                isLastPage: true,
-                onComplete: {
-                    authManager.completeOnboarding()
+        VStack {
+            // Skip Button
+            HStack {
+                Spacer()
+                Button("Skip") {
+                    appCoordinator.completeOnboarding()
                 }
-            )
+                .foregroundColor(.primary)
+                .padding()
+            }
+            
+            // Page Content
+            TabView(selection: $currentPage) {
+                OnboardingPageView(
+                    title: "Welcome",
+                    subtitle: "Welcome to your new iOS app template",
+                    description: "A modern, minimalistic template built with SwiftUI",
+                    systemImage: "hand.wave.fill"
+                )
+                .tag(0)
+                
+                OnboardingPageView(
+                    title: "Features",
+                    subtitle: "Everything you need to get started",
+                    description: "Authentication, profile management, settings, and more",
+                    systemImage: "star.fill"
+                )
+                .tag(1)
+                
+                OnboardingPageView(
+                    title: "Get Started",
+                    subtitle: "Ready to begin your journey?",
+                    description: "Create your account and start exploring",
+                    systemImage: "rocket.fill"
+                )
+                .tag(2)
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            
+            // Page Indicators
+            HStack(spacing: 8) {
+                ForEach(0..<totalPages, id: \.self) { index in
+                    Circle()
+                        .fill(index == currentPage ? Color.primary : Color.gray.opacity(0.3))
+                        .frame(width: 8, height: 8)
+                        .animation(.easeInOut, value: currentPage)
+                }
+            }
+            .padding()
+            
+            // Navigation Buttons
+            HStack {
+                if currentPage > 0 {
+                    Button("Previous") {
+                        withAnimation {
+                            currentPage -= 1
+                        }
+                    }
+                    .foregroundColor(.primary)
+                }
+                
+                Spacer()
+                
+                if currentPage < totalPages - 1 {
+                    Button("Next") {
+                        withAnimation {
+                            currentPage += 1
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                } else {
+                    Button("Get Started") {
+                        appCoordinator.completeOnboarding()
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+            }
+            .padding()
         }
-        .tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
 }
 
 struct OnboardingPageView: View {
-    @EnvironmentObject var theme: AppTheme
-    var imageName: String
-    var title: String
-    var description: String
-    var isLastPage: Bool = false
-    var onComplete: (() -> Void)? = nil
-
+    let title: String
+    let subtitle: String
+    let description: String
+    let systemImage: String
+    
     var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: imageName)
-                .font(.system(size: 100))
-                .foregroundColor(theme.colors.accent)
-            Text(title)
-                .font(theme.fonts.headline)
-                .foregroundColor(theme.colors.text)
-            Text(description)
-                .font(theme.fonts.body)
-                .foregroundColor(theme.colors.text)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
-            if isLastPage {
-                Button("Get Started") {
-                    onComplete?()
-                }
-                .buttonStyle(GlassmorphicButtonStyle())
-                .padding(.top)
+        VStack(spacing: 30) {
+            Spacer()
+            
+            Image(systemName: systemImage)
+                .font(.system(size: 80))
+                .foregroundColor(.primary)
+            
+            VStack(spacing: 16) {
+                Text(title)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                
+                Text(subtitle)
+                    .font(.title2)
+                    .fontWeight(.medium)
+                    .multilineTextAlignment(.center)
+                
+                Text(description)
+                    .font(.body)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal)
             }
+            
+            Spacer()
         }
         .padding()
     }
+}
+
+#Preview {
+    OnboardingView()
+        .environmentObject(AppCoordinator())
 }

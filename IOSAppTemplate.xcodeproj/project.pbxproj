@@ -21,14 +21,14 @@
 
 /* Begin PBXFileReference section */
 		2E3E7D6B2C4A0E4A007A4E1E /* IOSAppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E3E7D6E2C4A0E4A007A4E1E /* IOSAppTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSAppTemplateApp.swift; sourceTree = "<group>"; };
-		2E3E7D702C4A0E4A007A4E1E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2E3E7D6E2C4A0E4A007A4E1E /* IOSAppTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/IOSAppTemplateApp.swift; sourceTree = "<group>"; };
+		2E3E7D702C4A0E4A007A4E1E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/AppCoordinator.swift"; sourceTree = "<group>"; };
 		2E3E7D722C4A0E4A007A4E1E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2E3E7D742C4A0E4A007A4E1E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2E3E7D762C4A0E4A007A4E1E /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		2E3E7D782C4A0E4A007A4E1E /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		2E3E7D7A2C4A0E4A007A4E1E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		2E3E7D7C2C4A0E4A007A4E1E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		2E3E7D7C2C4A0E4A007A4E1E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Onboarding/OnboardingView.swift"; sourceTree = "<group>"; };
 		2E3E7D7E2C4A0E4A007A4E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E3E7D812C4A0E4A007A4E1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E3E7D842C4A0E4A007A4E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
